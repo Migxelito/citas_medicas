@@ -6,16 +6,16 @@ const moment = require('moment');
 const _ = require('lodash');
 const PORT = '8080';
 
-
+// Usuarios
 let usuarios = [];
 
-
+//Creando el servidor
 http.createServer((req,res) => {
 
        
         if (req.url.includes('/registrar')) {
                 axios
-                    .get('https://randomuser.me/api/')
+                    .get('https://randomuser.me/api/') //API
                     .then((data) => {
                         const nombre = data.data.results[0].name.first;
                         const apellido = data.data.results[0].name.last;
@@ -55,18 +55,3 @@ http.createServer((req,res) => {
     
 
     .listen(PORT, () => console.log('Iniciado en puerto ' + PORT));
-   
-  
-
-
-       
-
-
-
-
-
-    
-
-
-    
-
